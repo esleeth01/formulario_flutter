@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyForm extends StatefulWidget {
+  const MyForm({super.key});
+
   @override
   _MyFormState createState() => _MyFormState();
 }
@@ -29,7 +31,7 @@ class _MyFormState extends State<MyForm> {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Información del Usuario'),
+              title: const Text('Información del Usuario'),
               content:
                   Text('Usuario de nombre: $nombre, su correo es: $correo'),
               actions: [
@@ -37,7 +39,7 @@ class _MyFormState extends State<MyForm> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Cerrar'),
+                  child: const Text('Cerrar'),
                 ),
               ],
             );
@@ -48,15 +50,15 @@ class _MyFormState extends State<MyForm> {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Error'),
-              content: Text(
+              title: const Text('Error'),
+              content: const Text(
                   'Por favor, ingresa un correo electrónico válido. No se aceptan caracteres especiales distintos al @.'),
               actions: [
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Cerrar'),
+                  child: const Text('Cerrar'),
                 ),
               ],
             );
@@ -70,10 +72,10 @@ class _MyFormState extends State<MyForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mi Formulario'),
+        title: const Text('Mi Formulario'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -108,7 +110,7 @@ class _MyFormState extends State<MyForm> {
                       onPressed: _limpiarCampos,
                       child: const Text('Limpiar'),
                     ),
-                    SizedBox(width: 16),
+                    const SizedBox(width: 16),
                     ElevatedButton(
                       onPressed: _guardarFormulario,
                       child: const Text('Guardar'),
